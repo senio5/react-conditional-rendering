@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default function App(){
+  const[messages, setMessages] = React.useState(["a", "b"])
+
+
+  return(
+    <div>
+      messages.length === 0 ?
+      <h1>You're all caught up!</h1>
+      <h1>You have {messages.length} unread {messages.length > 1 ? "messages" : "message"}</h1>
     </div>
-  );
+  )
 }
 
-export default App;
+/*
+* What is conditional rendering?
+When we want to only sometimes display something on the page based on
+the condition of some sort
+
+When would we use &&?
+When you want to either display something or NOT display it
+
+When would you use a ternary?
+When you need to decide which thing among 2 options to display
+
+What if you need to decide between  > 2 options on what to display?
+Use an if... else if... else condition or a switch statement
+ */
